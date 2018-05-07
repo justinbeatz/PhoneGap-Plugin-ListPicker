@@ -36,7 +36,8 @@ ListPicker.prototype.showPicker = function(options, callback, error_callback) {
     cordova.exec(_callback, _error_callback, 'ListPicker', 'showPicker', [config]);
 }
 
-ListPicker.prototype.updatePicker = function(callback, error_callback) {
+ListPicker.prototype.updatePicker = function(itemList, callback, error_callback) {
+    itemList || (itemList = []);
     var _callback = function() {
         if(typeof callback == 'function') { 
           callback.apply(scope, arguments);
@@ -48,7 +49,7 @@ ListPicker.prototype.updatePicker = function(callback, error_callback) {
           error_callback.apply(scope, arguments);
         }
     };
-    cordova.exec(_callback, _error_callback, 'ListPicker', 'updatePicker');
+    cordova.exec(_callback, _error_callback, 'ListPicker', 'updatePicker', itemList);
 }
 
 ListPicker.prototype.closePicker = function() {

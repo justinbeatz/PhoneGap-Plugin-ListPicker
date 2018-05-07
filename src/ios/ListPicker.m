@@ -109,6 +109,9 @@
 }
 
 - (void)updatePicker:(CDVInvokedUrlCommand*)command {
+    // Hold items in an instance variable
+    self.items = [command.arguments objectAtIndex:0];
+    NSLog(@"%@",self.items);
     [self.pickerView reloadAllComponents];
 }
 
