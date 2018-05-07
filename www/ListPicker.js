@@ -35,4 +35,35 @@ ListPicker.prototype.showPicker = function(options, callback, error_callback) {
     };
     cordova.exec(_callback, _error_callback, 'ListPicker', 'showPicker', [config]);
 }
+
+ListPicker.prototype.updatePicker = function(callback, error_callback) {
+    var _callback = function() {
+        if(typeof callback == 'function') { 
+          callback.apply(scope, arguments);
+        }
+    };
+    
+    var _error_callback = function() {
+        if(typeof error_callback == 'function') { 
+          error_callback.apply(scope, arguments);
+        }
+    };
+    cordova.exec(_callback, _error_callback, 'ListPicker', 'updatePicker');
+}
+
+ListPicker.prototype.closePicker = function() {
+    var _callback = function() {
+        if(typeof callback == 'function') { 
+          callback.apply(scope, arguments);
+        }
+    };
+    
+    var _error_callback = function() {
+        if(typeof error_callback == 'function') { 
+          error_callback.apply(scope, arguments);
+        }
+    };
+    cordova.exec(_callback, _error_callback, 'ListPicker', 'dismissPicker');
+}
+
 module.exports = new ListPicker();

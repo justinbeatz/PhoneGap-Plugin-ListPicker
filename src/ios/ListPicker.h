@@ -15,5 +15,7 @@
 #pragma mark - Instance methods
 
 - (void)showPicker:(CDVInvokedUrlCommand*)command;
+- (void)updatePicker:(CDVInvokedUrlCommand*)command;
+- (void)dismissPicker:(CDVInvokedUrlCommand*)command;
 
 @end

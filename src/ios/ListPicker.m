@@ -107,6 +107,15 @@
         return [self presentModalViewForView:view];
     }
 }
+
+- (void)updatePicker:(CDVInvokedUrlCommand*)command {
+    [self.pickerView reloadAllComponents];
+}
+
+- (void)dismissPicker:(CDVInvokedUrlCommand*)command {
+    // dismiss with cancel
+    [self dismissModalView:self.modalView withButtonIndex:0 animated:YES];
+}
      
 -(void)presentModalViewForView:(UIView *)view {
 
